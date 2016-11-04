@@ -1,13 +1,13 @@
 <?php
 
-namespace Graemekilkenny\ApartmentCMS\Auth;
+namespace ApartmentCMS\ApartmentCMS\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Graemekilkenny\ApartmentCMS\Models\Page;
+use ApartmentCMS\ApartmentCMS\Models\Page;
 
 trait AuthenticatesUsers
 {

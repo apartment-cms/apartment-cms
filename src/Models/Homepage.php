@@ -1,10 +1,10 @@
 <?php
 
-namespace Graemekilkenny\ApartmentCMS\Models;
+namespace ApartmentCMS\ApartmentCMS\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Graemekilkenny\ApartmentCMS\Models\Template;
+use ApartmentCMS\ApartmentCMS\Models\Template;
 
 class Homepage extends Template
 {

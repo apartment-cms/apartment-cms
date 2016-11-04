@@ -1,6 +1,6 @@
 <?php
 
-namespace Graemekilkenny\ApartmentCMS;
+namespace ApartmentCMS\ApartmentCMS;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +18,7 @@ class ApartmentCmsServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/Views' => resource_path('views/vendor/apartment-cms'),
+            __DIR__.'/Config/apartment.php' => config_path('apartment.php'),
         ]);
     }
 
@@ -29,6 +30,8 @@ class ApartmentCmsServiceProvider extends ServiceProvider
     public function register()
     {
         include __DIR__.'/routes.php';
-        $this->app->make('Graemekilkenny\ApartmentCMS\Controllers\PageController');
+        $this->app->make('ApartmentCMS\ApartmentCMS\Controllers\PageController');
+
+        $this->app->register(\Yab\Laracogs\LaracogsProvider::class);
     }
 }

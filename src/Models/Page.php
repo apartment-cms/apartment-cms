@@ -1,6 +1,6 @@
 <?php
 
-namespace Graemekilkenny\ApartmentCMS\Models;
+namespace ApartmentCMS\ApartmentCMS\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
