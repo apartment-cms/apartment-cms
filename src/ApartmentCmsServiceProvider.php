@@ -18,6 +18,7 @@ class ApartmentCmsServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/Views' => resource_path('views/vendor/apartment-cms'),
+            __DIR__.'/Config/apartment.php' => config_path('apartment.php'),
         ]);
     }
 
@@ -30,5 +31,6 @@ class ApartmentCmsServiceProvider extends ServiceProvider
     {
         include __DIR__.'/routes.php';
         $this->app->make('ApartmentCMS\ApartmentCMS\Controllers\PageController');
+        $this->app->register(\Yab\Laracogs\LaracogsProvider::class);
     }
 }

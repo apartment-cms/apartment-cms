@@ -3,6 +3,7 @@
     "description": "A CMS for laravel, aiming to mimic the functionality of Silverstripe in a Laravel environment. Apartment CMS, it's where your content lives.",
     "type": "laravel-extension",
     "require": {
+        "illuminate/support": "5.*",
         "yab/laracogs": "^1.9"
     },
     "authors": [

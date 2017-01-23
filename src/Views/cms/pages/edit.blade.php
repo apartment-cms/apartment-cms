@@ -3,6 +3,9 @@
 
 @section('content')
 	<form method="/admin/pages/{slug}" action="POST">
+
+		{!! FormMaker::fromObject($page, Config::get('apartment.forms.'.$page->model)) !!}
+		
 		<input type="text" name="name" id="name" value="{{ $page->name }}" />
 		<input type="submit" name="submit" value="Save" />
 	</form>

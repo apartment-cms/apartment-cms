@@ -14,7 +14,7 @@ Route::group(['middleware' => 'web'], function () {
 	/**
 	 * Authentication Routes
 	 */
-	Route::group(['namespace' => 'Graemekilkenny\ApartmentCMS\Auth'], function() {
+	Route::group(['namespace' => 'ApartmentCMS\ApartmentCMS\Auth'], function() {
 
 		Route::get('login', 'LoginController@showLoginForm');
 		Route::post('login', 'LoginController@login');
@@ -22,11 +22,13 @@ Route::group(['middleware' => 'web'], function () {
 
 	});
 
-	
-	Route::group(['namespace' => 'Graemekilkenny\ApartmentCMS\Controllers'], function() {
+	/**
+	 * Application Routes
+	 */
+	Route::group(['namespace' => 'ApartmentCMS\ApartmentCMS\Controllers'], function() {
 
 		/**
-		 * Admin Routes
+		 * CMS Routes
 		 */
 		Route::group(['middleware' => 'auth'], function() {
 			Route::get('/admin', 
