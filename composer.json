@@ -10,5 +10,10 @@
             "name": "Graeme Kilkenny",
             "email": "graemekilkenny@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "ApartmentCMS\\ApartmentCMS\\": "src/"
+        }
+    }
 }

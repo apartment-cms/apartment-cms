@@ -1,6 +1,6 @@
 <?php
 
-namespace Graemekilkenny\ApartmentCMS;
+namespace ApartmentCMS\ApartmentCMS;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -29,6 +29,6 @@ class ApartmentCmsServiceProvider extends ServiceProvider
     public function register()
     {
         include __DIR__.'/routes.php';
-        $this->app->make('Graemekilkenny\ApartmentCMS\Controllers\PageController');
+        $this->app->make('ApartmentCMS\ApartmentCMS\Controllers\PageController');
     }
 }

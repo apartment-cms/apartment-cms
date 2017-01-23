@@ -1,13 +1,13 @@
 <?php 
 
-namespace Graemekilkenny\ApartmentCMS\Controllers;
+namespace ApartmentCMS\ApartmentCMS\Controllers;
  
 use App\Http\Controllers\Controller;
 
-use Graemekilkenny\ApartmentCMS\Models\Page;
-use Graemekilkenny\ApartmentCMS\Models\Template;
-use Graemekilkenny\ApartmentCMS\Models\Bucket;
-use Graemekilkenny\ApartmentCMS\Models\DataItem;
+use ApartmentCMS\ApartmentCMS\Models\Page;
+use ApartmentCMS\ApartmentCMS\Models\Template;
+use ApartmentCMS\ApartmentCMS\Models\Bucket;
+use ApartmentCMS\ApartmentCMS\Models\DataItem;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -17,7 +17,7 @@ class PageController extends Controller
     protected $template;
     protected $bucket;
     protected $dataItem;
-    protected $modelNamespace = 'Graemekilkenny\ApartmentCMS\Models';
+    protected $modelNamespace = 'ApartmentCMS\ApartmentCMS\Models';
 
     public function __construct(Page $page, Template $template, Bucket $bucket, DataItem $dataItem)
     {

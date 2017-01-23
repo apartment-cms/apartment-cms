@@ -1,9 +1,9 @@
 <?php
 
-namespace Graemekilkenny\ApartmentCMS\Auth;
+namespace ApartmentCMS\ApartmentCMS\Auth;
 
 use App\Http\Controllers\Auth\LoginController as LaravelAuthLoginController;
-use Graemekilkenny\ApartmentCMS\Auth\AuthenticatesUsers;
+use ApartmentCMS\ApartmentCMS\Auth\AuthenticatesUsers;
 
 class LoginController extends LaravelAuthLoginController
 {
