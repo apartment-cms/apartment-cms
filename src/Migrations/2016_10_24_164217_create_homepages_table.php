@@ -16,7 +16,7 @@ class CreateHomepagesTable extends Migration
         Schema::create('homepages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_id');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

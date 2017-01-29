@@ -11,6 +11,8 @@
 	</div>
 	<div>
 		<h1>{{ $pages->name }}</h1>
+		<a href="/admin">Home</a>
+		<a href="/admin/pages">New Page</a>
 		<a href="/logout">Logout</a>
 	</div>
 </header>

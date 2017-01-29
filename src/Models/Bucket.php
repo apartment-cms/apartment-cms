@@ -24,6 +24,11 @@ class Bucket extends Model
         
     ];
 
+    public function items()
+    {
+        return $this->hasMany('ApartmentCMS\ApartmentCMS\Models\DataItem');
+    }
+
     public function findBySlug($slug)
     {
         $bucket = $this->where('slug', $slug)->first();

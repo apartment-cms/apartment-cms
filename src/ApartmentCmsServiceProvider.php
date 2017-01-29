@@ -32,5 +32,6 @@ class ApartmentCmsServiceProvider extends ServiceProvider
         include __DIR__.'/routes.php';
         $this->app->make('ApartmentCMS\ApartmentCMS\Controllers\PageController');
         $this->app->register(\Yab\Laracogs\LaracogsProvider::class);
+        $this->app->bind('ApartmentCMS\ApartmentCMS\Repositories\PageRepositoryInterface', 'ApartmentCMS\ApartmentCMS\Repositories\PageRepository');
     }
 }

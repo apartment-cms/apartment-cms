@@ -31,11 +31,28 @@ Route::group(['middleware' => 'web'], function () {
 		 * CMS Routes
 		 */
 		Route::group(['middleware' => 'auth'], function() {
+			
 			Route::get('/admin', 
 		  		'Cms\PageController@home');
 
+			/**
+			 * Pages
+			 */
+			Route::get('/admin/pages', 
+		  		'Cms\PageController@create');
+
+			Route::post('/admin/pages', 
+		  		'Cms\PageController@store');
+
 			Route::get('/admin/pages/{slug}', 
 		  		'Cms\PageController@edit');
+
+			Route::post('/admin/pages/{slug}', 
+		  		'Cms\PageController@update');
+
+			/**
+			 * Buckets
+			 */
 		});	
 
 		/**
@@ -47,8 +64,8 @@ Route::group(['middleware' => 'web'], function () {
 		Route::get('/{slug}', 
 		  'PageController@show');
 
-		Route::get('/{bucket}/{slug}', 
-		  'PageController@objectView');
+		Route::get('/{slug}/{item}',
+			'PageController@show');
 
 	});
 

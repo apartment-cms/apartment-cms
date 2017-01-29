@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use ApartmentCMS\ApartmentCMS\Models\Template;
 
-class TextPage extends Template
+class ListPage extends Template
 {
     /**
      * The attributes that are mass assignable.
@@ -26,4 +26,8 @@ class TextPage extends Template
         
     ];
 
+    public function bucket()
+    {
+        return $this->belongsTo('ApartmentCMS\ApartmentCMS\Models\Bucket');
+    }
 }

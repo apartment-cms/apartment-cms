@@ -29,10 +29,16 @@ class Template extends Model
     {
         $page = $this->where('page_id', $pageId)->first();
 
-        if( ! $page ){
-            return abort(404);
-        }
+        // if( ! $page ){
+        //     return abort(404);
+        // }
 
         return $page;
+    }
+
+    public function createNewRecord($page, $request)
+    {
+        $this->page_id = $page->id;
+        $this->save();
     }
 }

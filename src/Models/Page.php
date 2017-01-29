@@ -25,20 +25,13 @@ class Page extends Model
         
     ];
 
-    public function findBySlug($slug)
-    {
-        $page = $this->where('slug', $slug)->first();
-
-        if( ! $page ){
-            return abort(404);
-        }
-
-        return $page;
-    }
-
     public function navigation()
     {
         return $this->where('parent_id', 0)->get()->sortBy('sort_order');
     }
 
+    public function template()
+    {
+        return $this->belongsTo('ApartmentCMS\ApartmentCMS\Models\Template');
+    }
 }
