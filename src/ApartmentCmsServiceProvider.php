@@ -34,5 +34,6 @@ class ApartmentCmsServiceProvider extends ServiceProvider
         $this->app->register(\Yab\Laracogs\LaracogsProvider::class);
         $this->app->bind('ApartmentCMS\ApartmentCMS\Repositories\PageRepositoryInterface', 'ApartmentCMS\ApartmentCMS\Repositories\PageRepository');
         $this->app->bind('ApartmentCMS\ApartmentCMS\Repositories\BucketRepositoryInterface', 'ApartmentCMS\ApartmentCMS\Repositories\BucketRepository');
+        $this->app->bind('ApartmentCMS\ApartmentCMS\Repositories\DataItemRepositoryInterface', 'ApartmentCMS\ApartmentCMS\Repositories\DataItemRepository');
     }
 }

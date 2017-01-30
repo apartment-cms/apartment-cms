@@ -33,7 +33,36 @@ return [
                 'type' => 'text',
             ],
         ],
-        'Blog' => [
+        'ListPage' => [
+            'content' => [
+                'type' => 'text',
+            ],
+            'bucket' => [
+                'type' => 'relationship',
+                'model' => 'ApartmentCMS\ApartmentCMS\Models\Bucket',
+                'label' => 'name',
+                'value' => 'id',
+                'relationship' => 'bucket_id'
+            ],
+        ],
+        'bucket' => [
+            'name' => [
+                'type' => 'string'
+            ],
+            'slug' => [
+                'type' => 'string',
+            ],
+            'contains' => [
+                'type' => 'string',
+            ],
+        ],
+        'dataItem' => [
+            'name' => [
+                'type' => 'string'
+            ],
+            'slug' => [
+                'type' => 'string',
+            ],
             'content' => [
                 'type' => 'text',
             ],

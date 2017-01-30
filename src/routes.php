@@ -64,6 +64,21 @@ Route::group(['middleware' => 'web'], function () {
 
 			Route::post('/admin/buckets/{slug}', 
 		  		'BucketController@update');
+
+			/**
+			 * Data Items
+			 */
+			Route::get('/admin/bucket/{bucket_id}/data-item', 
+		  		'DataItemController@create');
+
+			Route::post('/admin/bucket/{bucket_id}/data-item', 
+		  		'DataItemController@store');
+
+			Route::get('/admin/data-item/{slug}', 
+		  		'DataItemController@edit');
+
+			Route::post('/admin/data-item/{slug}', 
+		  		'DataItemController@update');
 		});	
 
 		/**

@@ -58,6 +58,7 @@ class BucketRepository implements BucketRepositoryInterface {
          */
         $bucket->name = $request->name;
         $bucket->slug = $request->slug;
+        $bucket->contains = $request->contains;
         $bucket->save();
 
         /**
@@ -71,6 +72,17 @@ class BucketRepository implements BucketRepositoryInterface {
 		$bucket = $this->bucket->where('slug', $slug)->first();
 
         if( ! $bucket ){
+            return abort(404);
+        }
+
+        return $bucket;
+	}
+
+	public function findById($id)
+	{
+		$bucket = $this->bucket->find($id);
+
+		if( ! $bucket ){
             return abort(404);
         }
 
