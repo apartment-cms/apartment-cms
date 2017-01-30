@@ -54,7 +54,6 @@ class PageRepository implements PageRepositoryInterface {
          * Get the template data
          */
         $class = $this->getTemplateClass($page->template_id);
-        //var_dump($page);
         list($templateData, $model) = $this->getTemplateSpecificData($page, $class);
 
         /**
@@ -68,7 +67,11 @@ class PageRepository implements PageRepositoryInterface {
         /**
          * Update template instance
          */
-        $templateData->content = $request->content;
+        foreach ($templateData->getFields() as $field) {
+            $modelFieldName = $field['model_label'];
+            $requestFieldName = $field['form_label'];
+            $templateData->$modelFieldName = $request->$requestFieldName;
+        }
         $templateData->save();
 	}
 

@@ -53,6 +53,17 @@ Route::group(['middleware' => 'web'], function () {
 			/**
 			 * Buckets
 			 */
+			Route::get('/admin/buckets', 
+		  		'BucketController@create');
+
+			Route::post('/admin/buckets', 
+		  		'BucketController@store');
+
+			Route::get('/admin/buckets/{slug}', 
+		  		'BucketController@edit');
+
+			Route::post('/admin/buckets/{slug}', 
+		  		'BucketController@update');
 		});	
 
 		/**

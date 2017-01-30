@@ -8,6 +8,17 @@ use ApartmentCMS\ApartmentCMS\Models\Template;
 
 class ListPage extends Template
 {
+    protected $fields = [
+        [
+            'form_label' => 'content',
+            'model_label' => 'content'
+        ],
+        [
+            'form_label' => 'bucket',
+            'model_label' => 'bucket_id'
+        ]
+    ];
+
     /**
      * The attributes that are mass assignable.
      *

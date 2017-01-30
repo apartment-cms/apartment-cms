@@ -17,10 +17,12 @@
 	</div>
 </header>
 <sidebar>
+	<h4>Buckets</h4>
 	<ul>
-	@foreach( $buckets->all()->sortBy('sort_order') as $bucket )
+	@foreach( $buckets->getAll()->sortBy('sort_order') as $bucket )
 		<li><a href="/admin/buckets/{{ $bucket->slug }}">{{ $bucket->name }}</a></li>
 	@endforeach
+		<li><a href="/admin/buckets">New Bucket</a></li>
 	</ul>	
 </sidebar>
 <div class="main">

@@ -17,7 +17,7 @@ class CreateBucketsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('view_name')->unique();
+            //$table->string('view_name')->unique();
             $table->integer('sort_order')->default(0);
             $table->timestamps();
         });

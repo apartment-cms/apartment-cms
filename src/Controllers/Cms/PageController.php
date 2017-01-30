@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use ApartmentCMS\ApartmentCMS\Repositories\PageRepositoryInterface;
+use ApartmentCMS\ApartmentCMS\Repositories\BucketRepositoryInterface;
 use ApartmentCMS\ApartmentCMS\Models\Template;
 use ApartmentCMS\ApartmentCMS\Models\Bucket;
 use ApartmentCMS\ApartmentCMS\Models\DataItem;
@@ -20,7 +21,7 @@ class PageController extends Controller
     protected $dataItem;
     protected $modelNamespace = 'ApartmentCMS\ApartmentCMS\Models';
 
-    public function __construct(PageRepositoryInterface $repo, Template $template, Bucket $bucket, DataItem $dataItem)
+    public function __construct(PageRepositoryInterface $repo, BucketRepositoryInterface $bucket, Template $template, DataItem $dataItem)
     {
         $this->repo = $repo;
         $this->template = $template;
@@ -30,8 +31,6 @@ class PageController extends Controller
 
     public function home()
     {
-        // $pages = $this->repo->getEmpty();
-        // $pages->name = 'CMS Home';
         $this->repo->name = 'CMS Home';
 
         /**
@@ -91,7 +90,6 @@ class PageController extends Controller
          */
         list($templateData, $model) = $this->repo->getTemplateSpecificData($page);
 
-        //dd($templateData);
         /**
          * Return the edit form for this page
          */

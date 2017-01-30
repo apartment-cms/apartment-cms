@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Template extends Model
 {
-    // [ 'name', 'template_id', 'parent_id', 'sort_order' ]
+    protected $fields = [
+        [
+            'form_label' => 'content',
+            'model_label' => 'content'
+        ]
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -29,10 +35,6 @@ class Template extends Model
     {
         $page = $this->where('page_id', $pageId)->first();
 
-        // if( ! $page ){
-        //     return abort(404);
-        // }
-
         return $page;
     }
 
@@ -40,5 +42,10 @@ class Template extends Model
     {
         $this->page_id = $page->id;
         $this->save();
+    }
+
+    public function getFields()
+    {
+        return $this->fields;
     }
 }
