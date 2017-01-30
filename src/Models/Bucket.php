@@ -26,7 +26,8 @@ class Bucket extends Model
 
     public function items()
     {
-        return $this->hasMany('ApartmentCMS\ApartmentCMS\Models\DataItem');
+        $model = $this->contains;
+        return $this->hasMany('ApartmentCMS\ApartmentCMS\Models\\'.$model);
     }
 
     public function findBySlug($slug)
