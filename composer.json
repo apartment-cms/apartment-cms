@@ -4,7 +4,7 @@
     "type": "laravel-extension",
     "require": {
         "illuminate/support": "5.*",
-        "yab/laracogs": "^1.9"
+        "yab/laracogs": "^2.*"
     },
     "authors": [
         {
